@@ -3,9 +3,13 @@ package example.genericclass
 /**
   * Created by koo on 2017. 2. 12..
   */
-class GenericClass {
-
-
+object GenericClass extends App {
+  val stack = new Stack[Int]
+  stack.push(1)
+  stack.push('a')
+  println(stack.top)
+  stack.pop()
+  println(stack.top)
 }
 
 class Stack[T] {
@@ -15,12 +19,3 @@ class Stack[T] {
   def pop() {elements = elements.tail }
 }
 
-
-object GenericTest extends App {
-  val stack = new Stack[Int]
-  stack.push(1)
-  stack.push('a')
-  println(stack.top)
-  stack.pop()
-  println(stack.top)
-}
